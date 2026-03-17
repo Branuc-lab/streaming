@@ -67,10 +67,20 @@
             display: flex;
             align-items: center;
             padding: 0 48px;
+            background-color: #0a0a0a;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
             background:
                 linear-gradient(to right, rgba(0,0,0,.92) 0%, rgba(0,0,0,.45) 50%, rgba(0,0,0,.1) 100%),
-                linear-gradient(to top, #0a0a0a 0%, transparent 40%),
-                url('https://picsum.photos/id/1043/1920/1080') center/cover no-repeat;
+                linear-gradient(to top, #0a0a0a 0%, transparent 40%);
+            z-index: 1;
         }
 
         .hero-content { max-width: 620px; z-index: 2; }
@@ -195,7 +205,7 @@
 
         .card img {
             width: 100%;
-            aspect-ratio: 16/9;
+            aspect-ratio: 2/3;
             object-fit: cover;
             display: block;
         }
@@ -369,14 +379,14 @@
     </header>
 
     <!-- HERO -->
-    <div class="hero">
+    <div class="hero" id="hero">
         <div class="hero-content">
-            <span class="hero-tag">Nouveau</span>
-            <h1>The Dark Knight</h1>
-            <p>Un vigilante masqué affronte le chaos incarné par un criminel anarchiste qui plonge Gotham dans la terreur.</p>
+            <span class="hero-tag" id="heroTag">Tendance</span>
+            <h1 id="heroTitle">Chargement...</h1>
+            <p id="heroDesc"></p>
             <div class="hero-buttons">
-                <button class="btn btn-primary" onclick="openPlayer('')">▶ Lecture</button>
-                <button class="btn btn-secondary">ℹ Plus d'infos</button>
+                <button class="btn btn-primary" id="heroPlayBtn">▶ Lecture</button>
+                <button class="btn btn-secondary" id="heroInfoBtn">ℹ Plus d'infos</button>
             </div>
         </div>
     </div>
@@ -384,135 +394,24 @@
     <!-- TENDANCES -->
     <div class="section">
         <h2>🔥 Tendances</h2>
-        <div class="row">
-            <div class="card" onclick="openPlayer('')">
-                <img src="https://picsum.photos/seed/t1/440/248" alt="">
-                <div class="card-overlay">
-                    <div><div class="card-title">Inception</div><div class="card-meta">⭐ 8.8</div></div>
-                </div>
-            </div>
-            <div class="card" onclick="openPlayer('')">
-                <img src="https://picsum.photos/seed/t2/440/248" alt="">
-                <div class="card-overlay">
-                    <div><div class="card-title">Interstellar</div><div class="card-meta">⭐ 8.7</div></div>
-                </div>
-            </div>
-            <div class="card" onclick="openPlayer('')">
-                <img src="https://picsum.photos/seed/t3/440/248" alt="">
-                <div class="card-overlay">
-                    <div><div class="card-title">Oppenheimer</div><div class="card-meta">⭐ 8.5</div></div>
-                </div>
-            </div>
-            <div class="card" onclick="openPlayer('')">
-                <img src="https://picsum.photos/seed/t4/440/248" alt="">
-                <div class="card-overlay">
-                    <div><div class="card-title">Parasite</div><div class="card-meta">⭐ 8.5</div></div>
-                </div>
-            </div>
-            <div class="card" onclick="openPlayer('')">
-                <img src="https://picsum.photos/seed/t5/440/248" alt="">
-                <div class="card-overlay">
-                    <div><div class="card-title">The Batman</div><div class="card-meta">⭐ 7.8</div></div>
-                </div>
-            </div>
-            <div class="card" onclick="openPlayer('')">
-                <img src="https://picsum.photos/seed/t6/440/248" alt="">
-                <div class="card-overlay">
-                    <div><div class="card-title">Dune: Part Two</div><div class="card-meta">⭐ 8.6</div></div>
-                </div>
-            </div>
-        </div>
+        <div class="row" id="rowTrending"></div>
     </div>
 
     <!-- FILMS POPULAIRES -->
     <div class="section" id="films">
         <h2>🎬 Films populaires</h2>
-        <div class="row">
-            <div class="card" onclick="openPlayer('')">
-                <img src="https://picsum.photos/seed/f1/440/248" alt="">
-                <div class="card-overlay">
-                    <div><div class="card-title">Fight Club</div><div class="card-meta">⭐ 8.8</div></div>
-                </div>
-            </div>
-            <div class="card" onclick="openPlayer('')">
-                <img src="https://picsum.photos/seed/f2/440/248" alt="">
-                <div class="card-overlay">
-                    <div><div class="card-title">Pulp Fiction</div><div class="card-meta">⭐ 8.9</div></div>
-                </div>
-            </div>
-            <div class="card" onclick="openPlayer('')">
-                <img src="https://picsum.photos/seed/f3/440/248" alt="">
-                <div class="card-overlay">
-                    <div><div class="card-title">The Matrix</div><div class="card-meta">⭐ 8.7</div></div>
-                </div>
-            </div>
-            <div class="card" onclick="openPlayer('')">
-                <img src="https://picsum.photos/seed/f4/440/248" alt="">
-                <div class="card-overlay">
-                    <div><div class="card-title">Gladiator</div><div class="card-meta">⭐ 8.5</div></div>
-                </div>
-            </div>
-            <div class="card" onclick="openPlayer('')">
-                <img src="https://picsum.photos/seed/f5/440/248" alt="">
-                <div class="card-overlay">
-                    <div><div class="card-title">Shutter Island</div><div class="card-meta">⭐ 8.2</div></div>
-                </div>
-            </div>
-            <div class="card" onclick="openPlayer('')">
-                <img src="https://picsum.photos/seed/f6/440/248" alt="">
-                <div class="card-overlay">
-                    <div><div class="card-title">Django Unchained</div><div class="card-meta">⭐ 8.4</div></div>
-                </div>
-            </div>
-        </div>
+        <div class="row" id="rowMovies"></div>
     </div>
 
     <!-- SÉRIES -->
     <div class="section" id="series">
         <h2>📺 Séries</h2>
-        <div class="row">
-            <div class="card" onclick="openPlayer('')">
-                <img src="https://picsum.photos/seed/s1/440/248" alt="">
-                <div class="card-overlay">
-                    <div><div class="card-title">Breaking Bad</div><div class="card-meta">⭐ 9.5</div></div>
-                </div>
-            </div>
-            <div class="card" onclick="openPlayer('')">
-                <img src="https://picsum.photos/seed/s2/440/248" alt="">
-                <div class="card-overlay">
-                    <div><div class="card-title">Stranger Things</div><div class="card-meta">⭐ 8.7</div></div>
-                </div>
-            </div>
-            <div class="card" onclick="openPlayer('')">
-                <img src="https://picsum.photos/seed/s3/440/248" alt="">
-                <div class="card-overlay">
-                    <div><div class="card-title">The Last of Us</div><div class="card-meta">⭐ 8.8</div></div>
-                </div>
-            </div>
-            <div class="card" onclick="openPlayer('')">
-                <img src="https://picsum.photos/seed/s4/440/248" alt="">
-                <div class="card-overlay">
-                    <div><div class="card-title">House of the Dragon</div><div class="card-meta">⭐ 8.4</div></div>
-                </div>
-            </div>
-            <div class="card" onclick="openPlayer('')">
-                <img src="https://picsum.photos/seed/s5/440/248" alt="">
-                <div class="card-overlay">
-                    <div><div class="card-title">Peaky Blinders</div><div class="card-meta">⭐ 8.8</div></div>
-                </div>
-            </div>
-            <div class="card" onclick="openPlayer('')">
-                <img src="https://picsum.photos/seed/s6/440/248" alt="">
-                <div class="card-overlay">
-                    <div><div class="card-title">Dark</div><div class="card-meta">⭐ 8.8</div></div>
-                </div>
-            </div>
-        </div>
+        <div class="row" id="rowSeries"></div>
     </div>
 
     <!-- FOOTER -->
     <footer>
-        STREAMDEOUF &copy; 2026 &mdash; Template UI uniquement.
+        STREAMDEOUF &copy; 2026 &mdash; Propulsé par TMDB.
     </footer>
 
     <!-- PLAYER MODAL -->
@@ -524,19 +423,91 @@
     </div>
 
     <script>
-        // Hide loading screen after page load
-        window.addEventListener('load', () => {
+        const TMDB_KEY = '77f0d9098f28cd262109739d1c578945';
+        const IMG_BASE = 'https://image.tmdb.org/t/p/';
+        const LANG = 'fr-FR';
+
+        // ── Loading screen ──
+        function hideLoader() {
             setTimeout(() => {
                 document.getElementById('loadingScreen').classList.add('hidden');
             }, 1500);
-        });
+        }
+        document.addEventListener('DOMContentLoaded', hideLoader);
 
-        // Header scroll effect
+        // ── Header scroll ──
         window.addEventListener('scroll', () => {
             document.getElementById('header').classList.toggle('scrolled', window.scrollY > 50);
         });
 
-        // Player
+        // ── TMDB fetch helper ──
+        async function tmdbFetch(endpoint) {
+            const res = await fetch(
+                `https://api.themoviedb.org/3${endpoint}${endpoint.includes('?') ? '&' : '?'}api_key=${TMDB_KEY}&language=${LANG}`
+            );
+            return res.json();
+        }
+
+        // ── Build a card ──
+        function createCard(item, type) {
+            const title = item.title || item.name;
+            const poster = item.poster_path
+                ? `${IMG_BASE}w342${item.poster_path}`
+                : 'https://via.placeholder.com/342x513/1a1a1a/333?text=No+Image';
+            const rating = item.vote_average ? item.vote_average.toFixed(1) : '—';
+            const mediaType = type || item.media_type || 'movie';
+            const tmdbId = item.id;
+
+            const card = document.createElement('div');
+            card.className = 'card';
+            card.onclick = () => openTrailer(tmdbId, mediaType);
+            card.innerHTML = `
+                <img src="${poster}" alt="${title}" loading="lazy">
+                <div class="card-overlay">
+                    <div>
+                        <div class="card-title">${title}</div>
+                        <div class="card-meta">⭐ ${rating}</div>
+                    </div>
+                </div>
+            `;
+            return card;
+        }
+
+        // ── Set hero from a movie/show ──
+        function setHero(item, type) {
+            const hero = document.getElementById('hero');
+            const backdrop = item.backdrop_path
+                ? `${IMG_BASE}original${item.backdrop_path}`
+                : '';
+            if (backdrop) {
+                hero.style.backgroundImage = `url('${backdrop}')`;
+            }
+            document.getElementById('heroTitle').textContent = item.title || item.name;
+            document.getElementById('heroDesc').textContent = item.overview
+                ? (item.overview.length > 200 ? item.overview.slice(0, 200) + '…' : item.overview)
+                : '';
+            const mediaType = type || item.media_type || 'movie';
+            document.getElementById('heroPlayBtn').onclick = () => openTrailer(item.id, mediaType);
+        }
+
+        // ── Open trailer from TMDB videos ──
+        async function openTrailer(tmdbId, mediaType) {
+            try {
+                const data = await tmdbFetch(`/${mediaType}/${tmdbId}/videos`);
+                const trailer = data.results && data.results.find(
+                    v => v.site === 'YouTube' && (v.type === 'Trailer' || v.type === 'Teaser')
+                );
+                if (trailer) {
+                    openPlayer(`https://www.youtube.com/embed/${trailer.key}?autoplay=1`);
+                } else {
+                    alert('Aucune bande-annonce disponible.');
+                }
+            } catch {
+                alert('Erreur lors du chargement de la bande-annonce.');
+            }
+        }
+
+        // ── Player ──
         function openPlayer(url) {
             if (!url) { alert('Aucune URL configurée pour ce contenu.'); return; }
             document.getElementById('playerFrame').src = url;
@@ -557,6 +528,44 @@
         document.getElementById('playerModal').addEventListener('click', (e) => {
             if (e.target === e.currentTarget) closePlayer();
         });
+
+        // ── Load all data ──
+        async function init() {
+            try {
+                const [trending, movies, series] = await Promise.all([
+                    tmdbFetch('/trending/all/week'),
+                    tmdbFetch('/movie/popular'),
+                    tmdbFetch('/tv/popular')
+                ]);
+
+                // Hero = first trending item
+                if (trending.results && trending.results.length > 0) {
+                    setHero(trending.results[0]);
+                }
+
+                // Populate rows
+                const rowTrending = document.getElementById('rowTrending');
+                const rowMovies = document.getElementById('rowMovies');
+                const rowSeries = document.getElementById('rowSeries');
+
+                (trending.results || []).slice(0, 10).forEach(item => {
+                    rowTrending.appendChild(createCard(item));
+                });
+
+                (movies.results || []).slice(0, 10).forEach(item => {
+                    rowMovies.appendChild(createCard(item, 'movie'));
+                });
+
+                (series.results || []).slice(0, 10).forEach(item => {
+                    rowSeries.appendChild(createCard(item, 'tv'));
+                });
+
+            } catch (err) {
+                console.error('Erreur TMDB:', err);
+            }
+        }
+
+        init();
     </script>
 </body>
 </html>
