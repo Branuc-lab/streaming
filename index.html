@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
@@ -579,6 +579,24 @@ body::-webkit-scrollbar-thumb { background: #333; border-radius: 4px; }
   50% { opacity: 0.5; transform: scale(0.95); }
 }
 
+.notification {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: var(--bg-card);
+  border: 1px solid #333;
+  border-left: 4px solid var(--red);
+  padding: 14px 20px;
+  border-radius: 6px;
+  font-size: 14px;
+  z-index: 3000;
+  transform: translateX(400px);
+  transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  max-width: 320px;
+}
+
+.notification.show { transform: translateX(0); }
+
 @media (max-width: 768px) {
   .nav-links { display: none; }
   .hero { height: 70vh; min-height: 450px; }
@@ -681,6 +699,8 @@ body::-webkit-scrollbar-thumb { background: #333; border-radius: 4px; }
   </div>
 </div>
 
+<div class="notification" id="notification"></div>
+
 <script>
 // ========== DATABASE ==========
 const DATABASE = [
@@ -689,4 +709,4 @@ const DATABASE = [
   {id:"tt6791350",title:"Guardians of the Galaxy Vol. 3",year:2023,type:"film",genre:["Action","Sci-Fi","Comédie"],rating:89,maturity:"13+",duration:"2h30",desc:"Les Gardiens se lancent dans une mission pour protéger l'un des leurs face au High Evolutionary.",img:"https://image.tmdb.org/t/p/w500/r2J02Z2OpNTctfOSN1Ydgii51I3.jpg",bg:"https://image.tmdb.org/t/p/original/cMqLhTMpKCBRWpkaBpSiABjBwHl.jpg",sources:["https://vidsrc.xyz/embed/movie/tt6791350","https://2embed.cc/embed/tt6791350"]},
   {id:"tt15398776",title:"Oppenheimer",year:2023,type:"film",genre:["Drame","Historique","Thriller"],rating:96,maturity:"16+",duration:"3h01",desc:"L'histoire de J. Robert Oppenheimer et son rôle dans le développement de la bombe atomique durant le projet Manhattan.",img:"https://image.tmdb.org/t/p/w500/8Gxv8gSFCU0XGDykEGv7zR1n2ua.jpg",bg:"https://image.tmdb.org/t/p/original/nb3xI8SI3w4pMVZ38VijbsyBqP4.jpg",sources:["https://vidsrc.xyz/embed/movie/tt15398776","https://2embed.cc/embed/tt15398776"]},
   {id:"tt9362722",title:"Spider-Man: Across the Spider-Verse",year:2023,type:"film",genre:["Animation","Action","Aventure"],rating:94,maturity:"TP",duration:"2h20",desc:"Miles Morales traverse le multivers et rencontre une équipe de Spider-People chargée de protéger son existence.",img:"https://image.tmdb.org/t/p/w500/8Vt6mWEReuy4Of61Lnj5Xj704m8.jpg",bg:"https://image.tmdb.org/t/p/original/4HodYYKEIsGOdinkGi2Ucz6X9i0.jpg",sources:["https://vidsrc.xyz/embed/movie/tt9362722","https://2embed.cc/embed/tt9362722"]},
-  {id:"tt1517268",title:"Barbie",year:2023,type:"film",genre:["Comédie","Aventure","Fantaisie"],rating:83,maturity:"13+",duration:"1h54",desc:"Barbie souffre d'une crise existentielle et part dans le monde réel pour trouver le vrai bonheur.",img:"https://image.tmdb.org/t/p/w500/i
+  {id:"tt1517268",title:"Barbie",year:2023,type:"film",
