@@ -40,7 +40,6 @@ body::-webkit-scrollbar { width: 8px; }
 body::-webkit-scrollbar-track { background: #000; }
 body::-webkit-scrollbar-thumb { background: #333; border-radius: 4px; }
 
-/* ========== HEADER ========== */
 .header {
   position: fixed;
   top: 0;
@@ -89,6 +88,7 @@ body::-webkit-scrollbar-thumb { background: #333; border-radius: 4px; }
   font-size: 14px;
   font-weight: 400;
   transition: color 0.2s;
+  cursor: pointer;
 }
 
 .nav-links li a:hover,
@@ -149,7 +149,6 @@ body::-webkit-scrollbar-thumb { background: #333; border-radius: 4px; }
   cursor: pointer;
 }
 
-/* ========== HERO ========== */
 .hero {
   position: relative;
   width: 100%;
@@ -165,7 +164,7 @@ body::-webkit-scrollbar-thumb { background: #333; border-radius: 4px; }
   inset: 0;
   background-size: cover;
   background-position: center 20%;
-  transition: opacity 1s ease, background-image 1s ease;
+  transition: opacity 1.2s ease, background-image 1.2s ease;
 }
 
 .hero-overlay {
@@ -265,42 +264,14 @@ body::-webkit-scrollbar-thumb { background: #333; border-radius: 4px; }
   transition: all 0.2s ease;
 }
 
-.btn-play {
-  background: #fff;
-  color: #000;
-}
+.btn-play { background: #fff; color: #000; }
+.btn-play:hover { background: #e0e0e0; }
+.btn-info { background: rgba(255,255,255,0.15); color: #fff; backdrop-filter: blur(4px); }
+.btn-info:hover { background: rgba(255,255,255,0.25); }
+.btn-mylist { background: rgba(255,255,255,0.1); color: #fff; border: 1px solid rgba(255,255,255,0.2); }
+.btn-mylist:hover { background: rgba(255,255,255,0.2); }
+.btn-mylist.added { background: rgba(229,9,20,0.2); border-color: var(--red); color: var(--red); }
 
-.btn-play:hover {
-  background: #e0e0e0;
-}
-
-.btn-info {
-  background: rgba(255,255,255,0.15);
-  color: #fff;
-  backdrop-filter: blur(4px);
-}
-
-.btn-info:hover {
-  background: rgba(255,255,255,0.25);
-}
-
-.btn-mylist {
-  background: rgba(255,255,255,0.1);
-  color: #fff;
-  border: 1px solid rgba(255,255,255,0.2);
-}
-
-.btn-mylist:hover {
-  background: rgba(255,255,255,0.2);
-}
-
-.btn-mylist.added {
-  background: rgba(229,9,20,0.2);
-  border-color: var(--red);
-  color: var(--red);
-}
-
-/* ========== ROWS ========== */
 .content-section {
   position: relative;
   z-index: 3;
@@ -346,7 +317,6 @@ body::-webkit-scrollbar-thumb { background: #333; border-radius: 4px; }
 
 .row-container::-webkit-scrollbar { display: none; }
 
-/* ========== CARDS ========== */
 .card {
   flex: 0 0 auto;
   width: 200px;
@@ -377,9 +347,7 @@ body::-webkit-scrollbar-thumb { background: #333; border-radius: 4px; }
   transition: filter 0.3s;
 }
 
-.card:hover .card-img {
-  filter: brightness(0.5);
-}
+.card:hover .card-img { filter: brightness(0.5); }
 
 .card-overlay {
   position: absolute;
@@ -393,25 +361,10 @@ body::-webkit-scrollbar-thumb { background: #333; border-radius: 4px; }
   background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, transparent 60%);
 }
 
-.card:hover .card-overlay {
-  opacity: 1;
-}
+.card:hover .card-overlay { opacity: 1; }
 
-.card-overlay-title {
-  font-size: 13px;
-  font-weight: 700;
-  margin-bottom: 4px;
-}
-
-.card-overlay-meta {
-  font-size: 11px;
-  color: var(--text-secondary);
-  display: flex;
-  gap: 8px;
-  align-items: center;
-  margin-bottom: 8px;
-}
-
+.card-overlay-title { font-size: 13px; font-weight: 700; margin-bottom: 4px; }
+.card-overlay-meta { font-size: 11px; color: var(--text-secondary); display: flex; gap: 8px; align-items: center; margin-bottom: 8px; }
 .card-overlay-meta .g { color: #46d369; font-weight: 600; }
 
 .card-play-btn {
@@ -452,20 +405,8 @@ body::-webkit-scrollbar-thumb { background: #333; border-radius: 4px; }
   text-overflow: ellipsis;
 }
 
-/* top 10 row */
-.row-top10 .card {
-  width: 160px;
-}
-
-.row-top10 .card-img-wrapper {
-  margin-left: 40px;
-}
-
-/* ========== MA LISTE ========== */
-.mylist-section {
-  padding: 0 4%;
-  margin-bottom: 40px;
-}
+.row-top10 .card { width: 160px; }
+.row-top10 .card-img-wrapper { margin-left: 40px; }
 
 .mylist-empty {
   text-align: center;
@@ -474,9 +415,9 @@ body::-webkit-scrollbar-thumb { background: #333; border-radius: 4px; }
   font-size: 14px;
   border: 1px dashed #333;
   border-radius: 8px;
+  margin: 0 4%;
 }
 
-/* ========== SEARCH RESULTS ========== */
 .search-results {
   display: none;
   position: fixed;
@@ -489,11 +430,7 @@ body::-webkit-scrollbar-thumb { background: #333; border-radius: 4px; }
 
 .search-results.active { display: block; }
 
-.search-results-title {
-  font-size: 24px;
-  font-weight: 700;
-  margin-bottom: 24px;
-}
+.search-results-title { font-size: 24px; font-weight: 700; margin-bottom: 24px; }
 
 .search-grid {
   display: grid;
@@ -501,11 +438,8 @@ body::-webkit-scrollbar-thumb { background: #333; border-radius: 4px; }
   gap: 16px;
 }
 
-.search-grid .card {
-  width: 100%;
-}
+.search-grid .card { width: 100%; }
 
-/* ========== PLAYER MODAL ========== */
 .player-modal {
   display: none;
   position: fixed;
@@ -516,9 +450,7 @@ body::-webkit-scrollbar-thumb { background: #333; border-radius: 4px; }
   align-items: center;
 }
 
-.player-modal.active {
-  display: flex;
-}
+.player-modal.active { display: flex; }
 
 .player-wrapper {
   position: relative;
@@ -531,11 +463,7 @@ body::-webkit-scrollbar-thumb { background: #333; border-radius: 4px; }
   box-shadow: 0 0 80px rgba(0,0,0,0.8);
 }
 
-.player-iframe {
-  width: 100%;
-  height: 100%;
-  border: none;
-}
+.player-iframe { width: 100%; height: 100%; border: none; }
 
 .player-close {
   position: absolute;
@@ -556,9 +484,7 @@ body::-webkit-scrollbar-thumb { background: #333; border-radius: 4px; }
   transition: background 0.2s;
 }
 
-.player-close:hover {
-  background: rgba(229,9,20,0.7);
-}
+.player-close:hover { background: rgba(229,9,20,0.7); }
 
 .player-sources {
   position: absolute;
@@ -586,15 +512,10 @@ body::-webkit-scrollbar-thumb { background: #333; border-radius: 4px; }
   transition: all 0.2s;
 }
 
-.source-btn:hover,
-.source-btn.active {
-  background: var(--red);
-  border-color: var(--red);
-}
+.source-btn:hover, .source-btn.active { background: var(--red); border-color: var(--red); }
 
-/* ========== GENRE FILTER ========== */
 .genre-bar {
-  padding: 80px 4% 10px;
+  padding: 20px 4% 10px;
   display: flex;
   gap: 8px;
   flex-wrap: wrap;
@@ -612,14 +533,8 @@ body::-webkit-scrollbar-thumb { background: #333; border-radius: 4px; }
   transition: all 0.2s;
 }
 
-.genre-chip:hover,
-.genre-chip.active {
-  background: var(--red);
-  border-color: var(--red);
-  color: #fff;
-}
+.genre-chip:hover, .genre-chip.active { background: var(--red); border-color: var(--red); color: #fff; }
 
-/* ========== FOOTER ========== */
 .footer {
   padding: 60px 4% 40px;
   border-top: 1px solid #1a1a1a;
@@ -634,29 +549,11 @@ body::-webkit-scrollbar-thumb { background: #333; border-radius: 4px; }
   margin-bottom: 30px;
 }
 
-.footer-col h4 {
-  color: var(--text-secondary);
-  margin-bottom: 12px;
-  font-size: 14px;
-}
-
-.footer-col a {
-  display: block;
-  color: var(--text-muted);
-  text-decoration: none;
-  margin-bottom: 8px;
-  transition: color 0.2s;
-}
-
+.footer-col h4 { color: var(--text-secondary); margin-bottom: 12px; font-size: 14px; }
+.footer-col a { display: block; color: var(--text-muted); text-decoration: none; margin-bottom: 8px; transition: color 0.2s; }
 .footer-col a:hover { color: var(--text-primary); }
+.footer-bottom { text-align: center; color: #333; font-size: 12px; }
 
-.footer-bottom {
-  text-align: center;
-  color: #333;
-  font-size: 12px;
-}
-
-/* ========== LOADING ========== */
 .loading-screen {
   position: fixed;
   inset: 0;
@@ -668,10 +565,7 @@ body::-webkit-scrollbar-thumb { background: #333; border-radius: 4px; }
   transition: opacity 0.5s;
 }
 
-.loading-screen.hidden {
-  opacity: 0;
-  pointer-events: none;
-}
+.loading-screen.hidden { opacity: 0; pointer-events: none; }
 
 .loading-logo {
   font-size: 48px;
@@ -685,7 +579,6 @@ body::-webkit-scrollbar-thumb { background: #333; border-radius: 4px; }
   50% { opacity: 0.5; transform: scale(0.95); }
 }
 
-/* ========== RESPONSIVE ========== */
 @media (max-width: 768px) {
   .nav-links { display: none; }
   .hero { height: 70vh; min-height: 450px; }
@@ -710,20 +603,18 @@ body::-webkit-scrollbar-thumb { background: #333; border-radius: 4px; }
 </head>
 <body>
 
-<!-- LOADING SCREEN -->
 <div class="loading-screen" id="loadingScreen">
   <div class="loading-logo">STREAMDEOUF</div>
 </div>
 
-<!-- HEADER -->
 <header class="header" id="header">
   <div class="header-left">
-    <div class="logo" onclick="location.reload()">STREAMDEOUF</div>
-    <ul class="nav-links">
-      <li><a href="#" class="active" onclick="showHome()">Accueil</a></li>
-      <li><a href="#" onclick="filterType('film')">Films</a></li>
-      <li><a href="#" onclick="filterType('serie')">Séries</a></li>
-      <li><a href="#" onclick="showMyList()">Ma Liste</a></li>
+    <div class="logo" onclick="showHome()">STREAMDEOUF</div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#" class="active" data-nav="accueil" onclick="showHome(); return false;">Accueil</a></li>
+      <li><a href="#" data-nav="films" onclick="filterType('film'); return false;">Films</a></li>
+      <li><a href="#" data-nav="series" onclick="filterType('serie'); return false;">Séries</a></li>
+      <li><a href="#" data-nav="maliste" onclick="showMyList(); return false;">Ma Liste</a></li>
     </ul>
   </div>
   <div class="header-right">
@@ -735,13 +626,11 @@ body::-webkit-scrollbar-thumb { background: #333; border-radius: 4px; }
   </div>
 </header>
 
-<!-- SEARCH RESULTS -->
 <div class="search-results" id="searchResults">
   <h2 class="search-results-title" id="searchResultsTitle"></h2>
   <div class="search-grid" id="searchGrid"></div>
 </div>
 
-<!-- HERO -->
 <section class="hero" id="hero">
   <div class="hero-bg" id="heroBg"></div>
   <div class="hero-overlay"></div>
@@ -749,25 +638,24 @@ body::-webkit-scrollbar-thumb { background: #333; border-radius: 4px; }
   <div class="hero-content" id="heroContent"></div>
 </section>
 
-<!-- CONTENT -->
+<div class="genre-bar" id="genreBar"></div>
 <div class="content-section" id="contentSection"></div>
 
-<!-- FOOTER -->
 <footer class="footer">
   <div class="footer-grid">
     <div class="footer-col">
       <h4>Navigation</h4>
-      <a href="#" onclick="showHome()">Accueil</a>
-      <a href="#" onclick="filterType('film')">Films</a>
-      <a href="#" onclick="filterType('serie')">Séries</a>
-      <a href="#" onclick="showMyList()">Ma Liste</a>
+      <a href="#" onclick="showHome(); return false;">Accueil</a>
+      <a href="#" onclick="filterType('film'); return false;">Films</a>
+      <a href="#" onclick="filterType('serie'); return false;">Séries</a>
+      <a href="#" onclick="showMyList(); return false;">Ma Liste</a>
     </div>
     <div class="footer-col">
       <h4>Genres</h4>
-      <a href="#" onclick="filterGenre('Action')">Action</a>
-      <a href="#" onclick="filterGenre('Horreur')">Horreur</a>
-      <a href="#" onclick="filterGenre('Comédie')">Comédie</a>
-      <a href="#" onclick="filterGenre('Sci-Fi')">Science-Fiction</a>
+      <a href="#" onclick="filterGenre('Action'); return false;">Action</a>
+      <a href="#" onclick="filterGenre('Horreur'); return false;">Horreur</a>
+      <a href="#" onclick="filterGenre('Comédie'); return false;">Comédie</a>
+      <a href="#" onclick="filterGenre('Sci-Fi'); return false;">Science-Fiction</a>
     </div>
     <div class="footer-col">
       <h4>Infos</h4>
@@ -785,7 +673,6 @@ body::-webkit-scrollbar-thumb { background: #333; border-radius: 4px; }
   <div class="footer-bottom">STREAMDEOUF © 2026 — Tous droits réservés (ou pas)</div>
 </footer>
 
-<!-- PLAYER MODAL -->
 <div class="player-modal" id="playerModal">
   <div class="player-wrapper">
     <button class="player-close" onclick="closePlayer()">✕</button>
@@ -798,8 +685,8 @@ body::-webkit-scrollbar-thumb { background: #333; border-radius: 4px; }
 // ========== DATABASE ==========
 const DATABASE = [
   // FILMS
-  { id: "tt1375666", title: "Inception", year: 2010, type: "film", genre: ["Sci-Fi","Action","Thriller"], rating: 97, maturity: "13+", duration: "2h28", desc: "Un voleur spécialisé dans l'extraction d'informations via les rêves accepte une dernière mission impossible : implanter une idée dans l'esprit de sa cible.", img: "https://image.tmdb.org/t/p/w500/ljsZTbVsrQSqZgWeep2B1QiDKuh.jpg" },
-  { id: "tt6791350", title: "Guardians of the Galaxy Vol. 3", year: 2023, type: "film", genre: ["Action","Sci-Fi","Comédie"], rating: 89, maturity: "13+", duration: "2h30", desc: "Les Gardiens se lancent dans une mission pour protéger l'un des leurs, menant à une confrontation avec le High Evolutionary.", img: "https://image.tmdb.org/t/p/w500/r2J02Z2OpNTctfOSN1Ydgii51I3.jpg" },
-  { id: "tt15398776", title: "Oppenheimer", year: 2023, type: "film", genre: ["Drame","Historique","Thriller"], rating: 96, maturity: "16+", duration: "3h01", desc: "L'histoire de J. Robert Oppenheimer et son rôle dans le développement de la bombe atomique durant le projet Manhattan.", img: "https://image.tmdb.org/t/p/w500/8Gxv8gSFCU0XGDykEGv7zR1n2ua.jpg" },
-  { id: "tt9362722", title: "Spider-Man: Across the Spider-Verse", year: 2023, type: "film", genre: ["Animation","Action","Aventure"], rating: 94, maturity: "TP", duration: "2h20", desc: "Miles Morales traverse le multivers et rencontre une équipe de Spider-People chargée de protéger son existence.", img: "https://image.tmdb.org/t/p/w500/8Vt6mWEReuy4Of61Lnj5Xj704m8.jpg" },
-  { id: "tt1517268", title: "Barbie", year: 2023, type: "film", genre: ["Comédie","Aventure","Fantaisie"], rating: 83, maturity: "13+", duration: "1h54", desc: "Barbie souffre d'une crise existentielle et part dans le monde réel pour trouver le vrai bonheur.", img: "https://image.tmdb.org/t/p/w500/iuFNMS8U5cb6xfzi51Dbkovj7vM
+  {id:"tt1375666",title:"Inception",year:2010,type:"film",genre:["Sci-Fi","Action","Thriller"],rating:97,maturity:"13+",duration:"2h28",desc:"Un voleur spécialisé dans l'extraction d'informations via les rêves accepte une dernière mission impossible : implanter une idée dans l'esprit de sa cible.",img:"https://image.tmdb.org/t/p/w500/ljsZTbVsrQSqZgWeep2B1QiDKuh.jpg",bg:"https://image.tmdb.org/t/p/original/8ZTVqvKDQ8emSGUEMjsS4yHAwrp.jpg",sources:["https://vidsrc.xyz/embed/movie/tt1375666","https://2embed.cc/embed/tt1375666"]},
+  {id:"tt6791350",title:"Guardians of the Galaxy Vol. 3",year:2023,type:"film",genre:["Action","Sci-Fi","Comédie"],rating:89,maturity:"13+",duration:"2h30",desc:"Les Gardiens se lancent dans une mission pour protéger l'un des leurs face au High Evolutionary.",img:"https://image.tmdb.org/t/p/w500/r2J02Z2OpNTctfOSN1Ydgii51I3.jpg",bg:"https://image.tmdb.org/t/p/original/cMqLhTMpKCBRWpkaBpSiABjBwHl.jpg",sources:["https://vidsrc.xyz/embed/movie/tt6791350","https://2embed.cc/embed/tt6791350"]},
+  {id:"tt15398776",title:"Oppenheimer",year:2023,type:"film",genre:["Drame","Historique","Thriller"],rating:96,maturity:"16+",duration:"3h01",desc:"L'histoire de J. Robert Oppenheimer et son rôle dans le développement de la bombe atomique durant le projet Manhattan.",img:"https://image.tmdb.org/t/p/w500/8Gxv8gSFCU0XGDykEGv7zR1n2ua.jpg",bg:"https://image.tmdb.org/t/p/original/nb3xI8SI3w4pMVZ38VijbsyBqP4.jpg",sources:["https://vidsrc.xyz/embed/movie/tt15398776","https://2embed.cc/embed/tt15398776"]},
+  {id:"tt9362722",title:"Spider-Man: Across the Spider-Verse",year:2023,type:"film",genre:["Animation","Action","Aventure"],rating:94,maturity:"TP",duration:"2h20",desc:"Miles Morales traverse le multivers et rencontre une équipe de Spider-People chargée de protéger son existence.",img:"https://image.tmdb.org/t/p/w500/8Vt6mWEReuy4Of61Lnj5Xj704m8.jpg",bg:"https://image.tmdb.org/t/p/original/4HodYYKEIsGOdinkGi2Ucz6X9i0.jpg",sources:["https://vidsrc.xyz/embed/movie/tt9362722","https://2embed.cc/embed/tt9362722"]},
+  {id:"tt1517268",title:"Barbie",year:2023,type:"film",genre:["Comédie","Aventure","Fantaisie"],rating:83,maturity:"13+",duration:"1h54",desc:"Barbie souffre d'une crise existentielle et part dans le monde réel pour trouver le vrai bonheur.",img:"https://image.tmdb.org/t/p/w500/i
